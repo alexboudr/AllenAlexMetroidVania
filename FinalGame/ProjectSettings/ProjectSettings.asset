@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: c63a7c03e74d9564fb3e100cf98eeeb0
+  productGUID: 5bc3cb4b333853d45b4623a2b51dceb7
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: FinalGame
+  productName: 3DMetroidvania
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -160,7 +160,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.3DMetroidvania
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -677,14 +678,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: FinalGame
+  metroPackageName: 3DMetroidvania
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: FinalGame
+  metroApplicationDescription: 3DMetroidvania
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -754,10 +755,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: a419a62c-6a3c-4aba-ae09-94b0c341e5f0
+  cloudProjectId: bdbac098-0075-4eb1-917a-2dd579aba792
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: FinalGame
+  projectName: 3DMetroidvania
   organizationId: yomonkeh
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
