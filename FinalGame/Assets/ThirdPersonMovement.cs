@@ -179,18 +179,18 @@ public class ThirdPersonController : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
 
         // Dash input
-        if (Input.GetButtonDown("Dash") && !isDashing)
-        {
-            Debug.Log("Dash");
-            StartCoroutine(Dash(wasGrounded, slopeAngleToTransfer));
-        }
+        //if (Input.GetButtonDown("Dash") && !isDashing)
+        //{
+        //    Debug.Log("Dash");
+        //    StartCoroutine(Dash(wasGrounded, slopeAngleToTransfer));
+        //}
 
-        if (!isDashing)
-        {
-            playerVelocity.x /= 1 + Drag.x * Time.deltaTime;
-            playerVelocity.y /= 1 + Drag.y * Time.deltaTime;
-            playerVelocity.z /= 1 + Drag.z * Time.deltaTime;
-        }
+        //if (!isDashing)
+        //{
+        //    playerVelocity.x /= 1 + Drag.x * Time.deltaTime;
+        //    playerVelocity.y /= 1 + Drag.y * Time.deltaTime;
+        //    playerVelocity.z /= 1 + Drag.z * Time.deltaTime;
+        //}
 
     }
 }
