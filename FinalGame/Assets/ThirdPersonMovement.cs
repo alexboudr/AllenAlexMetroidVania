@@ -29,7 +29,7 @@ public class ThirdPersonController : MonoBehaviour
     Vector3 Drag = new Vector3(1, 1, 1);
 
 
-    private IEnumerator Dash(bool wasGroundedBeforeDash)
+    private IEnumerator Dash(bool wasGroundedBeforeDash, float slopeAngle)
     {
         isDashing = true;
         float startTime = Time.time;
@@ -89,6 +89,7 @@ public class ThirdPersonController : MonoBehaviour
         float sphereRadius = controller.radius - 0.05f;  // Slightly smaller than the CharacterController
         float sphereCastLength = 0.3f;  // Small enough to detect ground but not false positives
         bool wasGrounded = groundedPlayer;
+        float slopeAngleToTransfer; //im lazy lol
 
         if (Physics.SphereCast(sphereOrigin, sphereRadius, Vector3.down, out hit, sphereCastLength))
         {
@@ -96,6 +97,7 @@ public class ThirdPersonController : MonoBehaviour
 
             //if it detects it's on ground, then check if it's a slope
             float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+            slopeAngleToTransfer = slopeAngle; 
 
             if (slopeAngle >= 0.1f) // handles any slope
             {
@@ -180,7 +182,7 @@ public class ThirdPersonController : MonoBehaviour
         if (Input.GetButtonDown("Dash") && !isDashing)
         {
             Debug.Log("Dash");
-            StartCoroutine(Dash(wasGrounded));
+            StartCoroutine(Dash(wasGrounded, slopeAngleToTransfer));
         }
 
         if (!isDashing)
