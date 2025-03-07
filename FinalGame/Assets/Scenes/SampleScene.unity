@@ -903,10 +903,11 @@ MonoBehaviour:
   cam: {fileID: 1919409381}
   speed: 10
   turnSmoothTime: 0.1
-  jumpHeight: 4
+  jumpHeight: 3.5
   gravityValue: -25
-  dashSpeed: 20
-  dashTime: 0.3
+  dashSpeed: 15
+  dashTime: 0.35
+  dashCooldown: 1
 --- !u!23 &621364678
 MeshRenderer:
   m_ObjectHideFlags: 0
