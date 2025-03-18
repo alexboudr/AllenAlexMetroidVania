@@ -1,18 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\",
+  "WorkspaceRootPath": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\orbitingcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\orbitingcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\ThirdPersonMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\ThirdPersonMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F50CCB91-64F3-FFEE-CE3B-FC71C08509DA}|Assembly-CSharp-Editor.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\editor\\simplecustomeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F50CCB91-64F3-FFEE-CE3B-FC71C08509DA}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\simplecustomeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F50CCB91-64F3-FFEE-CE3B-FC71C08509DA}|Assembly-CSharp-Editor.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\editor\\simplecustomereditor_uxml.uxml||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{F50CCB91-64F3-FFEE-CE3B-FC71C08509DA}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\simplecustomereditor_uxml.uxml||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\thirdpersonmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\thirdpersonmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\clingerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\clingerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:Assets\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,41 +47,100 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Bullet.cs",
-              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
-              "RelativeToolTip": "Assets\\Bullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "OrbitingCamera.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\OrbitingCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\OrbitingCamera.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\OrbitingCamera.cs",
+              "RelativeToolTip": "Assets\\OrbitingCamera.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T23:47:43.728Z",
+              "WhenOpened": "2025-03-17T19:56:06.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Gun.cs",
-              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs",
-              "RelativeDocumentMoniker": "Assets\\Gun.cs",
-              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs",
-              "RelativeToolTip": "Assets\\Gun.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T23:02:00.256Z",
+              "WhenOpened": "2025-03-17T19:00:24.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ThirdPersonMovement.cs",
-              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\ThirdPersonMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\ThirdPersonMovement.cs",
-              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\ThirdPersonMovement.cs",
-              "RelativeToolTip": "Assets\\ThirdPersonMovement.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAwwMsAAAAqAAAAAAAAAA==",
+              "Title": "SimpleCustomEditor.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Editor\\SimpleCustomEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\SimpleCustomEditor.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Editor\\SimpleCustomEditor.cs",
+              "RelativeToolTip": "Assets\\Editor\\SimpleCustomEditor.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T19:07:15.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T21:58:31.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SimpleCustomerEditor_UXML.uxml",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Editor\\SimpleCustomerEditor_UXML.uxml",
+              "RelativeDocumentMoniker": "Assets\\Editor\\SimpleCustomerEditor_UXML.uxml",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Editor\\SimpleCustomerEditor_UXML.uxml",
+              "RelativeToolTip": "Assets\\Editor\\SimpleCustomerEditor_UXML.uxml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-03-08T21:57:35.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClingerScript.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\ClingerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\ClingerScript.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\ClingerScript.cs",
+              "RelativeToolTip": "Assets\\ClingerScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T21:37:11.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Bullet.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Bullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T23:47:43.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Gun.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs",
+              "RelativeDocumentMoniker": "Assets\\Gun.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs",
+              "RelativeToolTip": "Assets\\Gun.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T23:02:00.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ThirdPersonMovement.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\ThirdPersonMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\ThirdPersonMovement.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\ThirdPersonMovement.cs",
+              "RelativeToolTip": "Assets\\ThirdPersonMovement.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAwwMsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:07:15.958Z"
             }
           ]
         }
