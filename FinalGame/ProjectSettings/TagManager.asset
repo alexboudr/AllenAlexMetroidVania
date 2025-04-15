@@ -12,7 +12,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Scannable
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Panels
     uniqueID: 1401455263
+    locked: 0
+  - name: Scannable
+    uniqueID: 3986434373
     locked: 0
