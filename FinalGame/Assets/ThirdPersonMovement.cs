@@ -36,6 +36,7 @@ public class ThirdPersonController : MonoBehaviour
     private bool canDash = true;
     //private bool dashCancel = true;
     private bool pickedupDash = false;
+    private bool hasDashedOnce = false;
 
     //sound effect stuff
     private AudioSource audioSource; //audio source...
@@ -68,18 +69,27 @@ public class ThirdPersonController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, originalY, transform.position.z);
             }
 
-            // Allow jumping from the dash
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && !hasDashedOnce)
             {
-                jumpedDuringDash = true; // Track that we jumped
-                //canDash = true; // Reset dash availability immediately after a jump
+                //if (groundedPlayer || (pickedUpDoubleJump && canDoubleJump)) // Only allow double jump if they have the ability
+                //{
+                    jumpedDuringDash = true; // Track that we jumped
 
-                playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue); // Apply jump force
+                    playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * 0.75f * gravityValue); // Apply jump force
 
-                // Maintain dash momentum in the jump
-                playerVelocity.x = transform.forward.x * dashSpeed;
-                playerVelocity.z = transform.forward.z * dashSpeed;
-                break; // Exit the dash
+                    // Maintain dash momentum in the jump
+                    playerVelocity.x = transform.forward.x * dashSpeed;
+                    playerVelocity.z = transform.forward.z * dashSpeed;
+                    canDoubleJump = true;
+                    hasDashedOnce = true;
+
+                //if (!groundedPlayer) // If we used the double jump, disable it
+                //    {
+                //        canDoubleJump = false;
+                //    }
+
+                    break; // Exit the dash
+                //}
             }
 
             // Stop dash if we were falling and hit the ground
@@ -139,7 +149,7 @@ public class ThirdPersonController : MonoBehaviour
         if (Physics.SphereCast(sphereOrigin, sphereRadius, Vector3.down, out hit, sphereCastLength))
         {
             groundedPlayer = true;
-
+            hasDashedOnce = false;
             // Only reset canDoubleJump if we actually have the power-up
             if (pickedUpDoubleJump)
             {

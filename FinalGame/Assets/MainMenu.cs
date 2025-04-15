@@ -8,4 +8,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Heading to: " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void ExitScene()
+    {
+        Debug.Log("Exited application!");
+        Application.Quit();
+    }
 }
