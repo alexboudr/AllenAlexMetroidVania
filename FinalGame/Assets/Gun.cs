@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     public float bulletSpeed = 10;
 
     //[SerializeField] Transform gunAim;
-    //[SerializeField] LineRenderer lineRend;
+    [SerializeField] LineRenderer lineRend;
 
     public float damage = 1f;
     public float range = 10f;
@@ -35,13 +35,18 @@ public class Gun : MonoBehaviour
 
             // DRAWING RAYCAST LINES FOR DEBUGGING
 
+            //lineRend.enabled = true;
+            //lineRend.SetPosition(0, bulletSpawnPoint.position);
+            //lineRend.SetPosition(1, hit.point);
+
+
             //Debug.DrawRay(bulletSpawnPoint.position, hit.point - bulletSpawnPoint.position, Color.blue, 2, false);
             //Debug.DrawRay(cam.transform.position, hit.point - bulletSpawnPoint.position, Color.red, 2, false);
 
-            Vector3 direction = (hit.point - bulletSpawnPoint.position).normalized;
+            Vector3 shotDirection = hit.point - bulletSpawnPoint.position;
 
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.LookRotation(shotDirection));
+            bullet.GetComponent<Rigidbody>().velocity = shotDirection.normalized * bulletSpeed;
 
             //if ( hit.transform.CompareTag("Enemy") )
             //{
