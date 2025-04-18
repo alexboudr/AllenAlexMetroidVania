@@ -1,6 +1,11 @@
 .vs
 
 ###
+# Visual Studio files
+###
+.vs/
+
+###
 # Unity folders and files
 ###
 [Aa]ssets/AssetStoreTools*
