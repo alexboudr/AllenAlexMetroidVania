@@ -5,9 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float life = 3;
+    private AudioSource audioSource;
+    public AudioClip collideSound;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>(); //initialize the audio source
         Destroy(gameObject, life);
     }
 
@@ -21,6 +24,9 @@ public class Bullet : MonoBehaviour
             // subtract from enemy health
             enemy.TakeDamage(1);
         }
+
+        Debug.Log("hit!");
+        AudioSource.PlayClipAtPoint(collideSound, transform.position); //this plays even after its destroyed
 
         // destroy the bullet after collision
         Destroy(gameObject);

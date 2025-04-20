@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 3
+  collideSound: {fileID: 8300000, guid: e9027e2f9111b4348a945df7ec9aa281, type: 3}
+  collideEffect: {fileID: 6473930240934353716, guid: 7f1769c192a88fd45bba41dc0270394d, type: 3}
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0

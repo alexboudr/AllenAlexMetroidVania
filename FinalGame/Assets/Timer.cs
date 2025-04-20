@@ -35,6 +35,14 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        //ignore this
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                Screen.fullScreen = !Screen.fullScreen;
+            }
+        
+
         if (isRunning)
         {
             if(isCountDown)
