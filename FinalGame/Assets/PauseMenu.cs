@@ -13,6 +13,17 @@ public class PauseMenu : MonoBehaviour
 
     private int selectedOption = 0;
 
+    //disable gun script when paused
+    public Gun scriptToDisable;
+
+    private void Toggle()
+    {
+        if (scriptToDisable != null)
+        {
+            scriptToDisable.isGunActive = !scriptToDisable.isGunActive;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
+            Toggle();
             Debug.Log("This is getting activated");
             isActive = !isActive;
 
@@ -49,6 +61,7 @@ public class PauseMenu : MonoBehaviour
         pauseUI.SetActive(isActive);
 
         Time.timeScale = 1f;//resume game time
+        Toggle();
     }
 
     //this method SUCKS
