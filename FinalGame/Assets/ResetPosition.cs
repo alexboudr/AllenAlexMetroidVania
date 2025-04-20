@@ -21,7 +21,7 @@ public class ResetPosition : MonoBehaviour
     void Update()
     {
         //Debug.Log(transform.position.ToString());
-        if (transform.position.y <= -25f)
+        if (transform.position.y <= -30f)
         {
             Debug.Log("this should activate");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

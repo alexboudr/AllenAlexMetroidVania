@@ -15,6 +15,12 @@ public class Gun : MonoBehaviour
     public float range = 10f;
     public Camera cam;
 
+    //sound effect stuff
+    private AudioSource audioSource; //audio source...
+    public AudioClip shootSound;
+
+
+
     void Update()
     {
         //if(Input.GetKeyDown(KeyCode.Q))
@@ -22,6 +28,11 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
+    }
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); //initialize the audio source
     }
 
     void Shoot ()
@@ -47,6 +58,8 @@ public class Gun : MonoBehaviour
 
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.LookRotation(shotDirection));
             bullet.GetComponent<Rigidbody>().velocity = shotDirection.normalized * bulletSpeed;
+
+            audioSource.PlayOneShot(shootSound, 0.7F); //play that damn sound
 
             //if ( hit.transform.CompareTag("Enemy") )
             //{

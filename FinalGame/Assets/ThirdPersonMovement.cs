@@ -19,7 +19,7 @@ public class ThirdPersonController : MonoBehaviour
     public float gravityValue = -9.81f;
     private bool groundedPlayer;
     private Vector3 playerVelocity;
-    private bool isSlopeJump = false;
+    private bool canJump = true;
     private bool canDoubleJump = true;
     private bool pickedUpDoubleJump = false;
 
@@ -36,7 +36,7 @@ public class ThirdPersonController : MonoBehaviour
     private bool canDash = true;
     //private bool dashCancel = true;
     private bool pickedupDash = false;
-    private bool hasDashedOnce = false;
+    //private bool hasDashedOnce = false;
 
     //sound effect stuff
     private AudioSource audioSource; //audio source...
@@ -44,9 +44,75 @@ public class ThirdPersonController : MonoBehaviour
     public AudioClip dashSound;
     public AudioClip dashRegenSound;
 
+
+
+    private void Jump(int define)
+    {
+        
+        //"three" definitions
+        // 0 = regular jump
+        // 1 = double jump
+        // 2 = jump during dash
+        if (define == 0)
+        {
+            Debug.Log("Jump!");
+
+            audioSource.PlayOneShot(jumpSound, 0.7F);
+
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            canDash = true;
+        }
+        else if (define == 1)
+        {
+            Debug.Log("Double Jump!");
+
+            audioSource.PlayOneShot(jumpSound, 0.7F);
+
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * 0.75f * -2.0f * gravityValue);
+            canDoubleJump = false;
+        }
+        else if (define == 2)
+        {
+
+           // if (canJump)//stupid fucking variable I put to hopefully help in some fucking stupid way
+            //{
+                playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * 0.75f * gravityValue); //apply jump force
+
+                //maintain dash momentum in the jump
+                playerVelocity.x = transform.forward.x * dashSpeed;
+                playerVelocity.z = transform.forward.z * dashSpeed;
+            //canDoubleJump = true;
+            //hasDashedOnce = true;
+            //}
+
+            
+        }
+        else
+        {
+            Debug.Log("error on jumpng?");
+        }
+    }
+
+
+
+
     private IEnumerator Dash(bool wasGroundedBeforeDash)
     {
         isDashing = true;
+
+        if (wasGroundedBeforeDash)
+        {
+            canJump = true; // <-- Add this line back if it was removed
+        }
+        else
+        {
+            //canJump = false;
+        }
+
+        //if (!groundedPlayer)
+        //{
+        //    canJump = false;
+        //}
         float startTime = Time.time;
         float originalY = transform.position.y; // Store Y position when the dash starts
         bool jumpedDuringDash = false; // Track if we jumped mid-dash
@@ -69,42 +135,65 @@ public class ThirdPersonController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, originalY, transform.position.z);
             }
 
-            if (Input.GetButtonDown("Jump") && !hasDashedOnce)
+            if (Input.GetButtonDown("Jump") && (groundedPlayer || canJump || canDoubleJump))
+            //have we dash jumped already?
             {
                 //if (groundedPlayer || (pickedUpDoubleJump && canDoubleJump)) // Only allow double jump if they have the ability
                 //{
-                    jumpedDuringDash = true; // Track that we jumped
+                jumpedDuringDash = true; //track that we jumped
+                Debug.Log("ok,,,,,,, so I should be able to jump now");
+                //canJump = true;
 
-                    playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * 0.75f * gravityValue); // Apply jump force
+                if (canJump) //ok SO, if they HAVEN"T jumped, run jump2
+                {
+                    Debug.Log("YAHAHAHAHAHA");
+                    Jump(2);
+                    canJump = false;
+                }
+                else if (canDoubleJump)
+                {
+                    Debug.Log("uyooyoyoyoyoyoyo");
+                    Jump(2);
+                    canDoubleJump = false;
+                }
+                
+                
+                
 
-                    // Maintain dash momentum in the jump
-                    playerVelocity.x = transform.forward.x * dashSpeed;
-                    playerVelocity.z = transform.forward.z * dashSpeed;
-                    canDoubleJump = true;
-                    hasDashedOnce = true;
+                    //playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * 0.75f * gravityValue); // Apply jump force
+
+                    //// Maintain dash momentum in the jump
+                    //playerVelocity.x = transform.forward.x * dashSpeed;
+                    //playerVelocity.z = transform.forward.z * dashSpeed;
+                    //canDoubleJump = true;
+                    //hasDashedOnce = true;
 
                 //if (!groundedPlayer) // If we used the double jump, disable it
                 //    {
                 //        canDoubleJump = false;
                 //    }
 
-                    break; // Exit the dash
+                break; // Exit the dash
                 //}
             }
 
-            // Stop dash if we were falling and hit the ground
+            //stop dash if we hit the ground
             if (groundedPlayer && !wasGroundedBeforeDash)
+            {
                 break;
+            }
+
+                
 
             yield return null;
         }
 
         isDashing = false;
 
-        // If falling, reset downward velocity to a smaller value
+        //it's own gravity, or else it will keep on increasing
         if (playerVelocity.y < 0)
         {
-            playerVelocity.y = Mathf.Max(playerVelocity.y, -2f); // Slow down the fall slightly
+            playerVelocity.y = Mathf.Max(playerVelocity.y, -2f); 
         }
 
         //set dashing to false
@@ -139,44 +228,31 @@ public class ThirdPersonController : MonoBehaviour
     void Update()
     {
         //determines if I'm hitting the floor
+        Debug.Log(groundedPlayer);
         RaycastHit hit;
         Vector3 sphereOrigin = transform.position + Vector3.down * (controller.height / 2f - controller.radius);
         float sphereRadius = controller.radius - 0.05f;  // Slightly smaller than the CharacterController
         float sphereCastLength = 0.3f;  // Small enough to detect ground but not false positives
         bool wasGrounded = groundedPlayer;
-        float slopeAngleToTransfer = 0; //im lazy lol
+        //float slopeAngleToTransfer = 0; //im lazy lol
 
         if (Physics.SphereCast(sphereOrigin, sphereRadius, Vector3.down, out hit, sphereCastLength))
         {
+            canJump = true;
+            Debug.Log("so this should reset canJump");
             groundedPlayer = true;
-            hasDashedOnce = false;
+            //hasDashedOnce = false;
+
             // Only reset canDoubleJump if we actually have the power-up
             if (pickedUpDoubleJump)
             {
                 canDoubleJump = true;
             }
             //if it detects it's on ground, then check if it's a slope
-            float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
-            slopeAngleToTransfer = slopeAngle;
+            //float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+            //slopeAngleToTransfer = slopeAngle;
 
-            if (slopeAngle > 0) // handles any slope
-            {
-                Debug.Log("Slope detected! Commencing stick");
-
-                if (Input.GetButtonDown("Jump"))
-                {
-                    isSlopeJump = true;
-                }
-                else
-                {
-                    // instead of forcing downward velocity, smoothly apply gravity
-                    if (playerVelocity.y < 0)
-                    {
-                        playerVelocity.y += gravityValue * Time.deltaTime * 0.5f; //softer gravity to avoid hard falls
-                    }
-                    isSlopeJump = false;
-                }
-            }
+            
 
             // Debug.Log("Ground detected at: " + hit.point);
         }
@@ -184,7 +260,6 @@ public class ThirdPersonController : MonoBehaviour
         {
             //Debug.Log("No ground detected.");
             groundedPlayer = false;
-            isSlopeJump = false;
 
 
             if (wasGrounded)
@@ -217,30 +292,32 @@ public class ThirdPersonController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (groundedPlayer || isSlopeJump || isDashing)//normal
+           if (groundedPlayer)//normal - this prevents from spammign double jump 
             {
-                Debug.Log("Jump!");
+                Jump(0);
+                //Debug.Log("Jump!");
 
-                audioSource.PlayOneShot(jumpSound, 0.7F);
+                //audioSource.PlayOneShot(jumpSound, 0.7F);
 
-                playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-                canDash = true;
+                //playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+                //canDash = true;
 
-                if (isDashing)
-                {
-                    isDashing = false; 
-                    dashTimer = 0; 
-                }
-            }
-            else if (canDoubleJump && pickedUpDoubleJump) //double
-            {
-                Debug.Log("Double Jump!");
+                //if (isDashing)
+                //{
+                //    isDashing = false; 
+                //    dashTimer = 0; 
+                //}
+           }
+           else if (canDoubleJump && pickedUpDoubleJump) //double
+           {
+                Jump(1);
+                //Debug.Log("Double Jump!");
 
-                audioSource.PlayOneShot(jumpSound, 0.7F);
+                //audioSource.PlayOneShot(jumpSound, 0.7F);
 
-                playerVelocity.y = Mathf.Sqrt(jumpHeight * 0.75f * -2.0f * gravityValue);
-                canDoubleJump = false;
-            }
+                //playerVelocity.y = Mathf.Sqrt(jumpHeight * 0.75f * -2.0f * gravityValue);
+                //canDoubleJump = false;
+           }
         }
         //if (Input.GetButtonDown("Jump"))
         //{
@@ -295,6 +372,7 @@ public class ThirdPersonController : MonoBehaviour
             
         }
 
+        //this applies gravity to the player UNLESS they are dashing (locks y)
         if (!groundedPlayer && !isDashing)
         {
             Debug.Log("THIS IS GETTING ACTIVATED");
@@ -302,11 +380,21 @@ public class ThirdPersonController : MonoBehaviour
             playerVelocity.z /= 1 + Drag.z * Time.deltaTime * 0.5f;
         }
 
-        if (groundedPlayer && !wasGrounded) // Just landed
+        if (groundedPlayer && !wasGrounded) //reset momentum when you land
         {
             Debug.Log("Landing! Reset momentum");
             playerVelocity.x = 0f;
             playerVelocity.z = 0f;
+
+            //reset dash on landing (or else the sound will play ANY time you land, for hte if statement)
+            if (!canDash)
+            {
+                Debug.Log("Resetting dash on landing");
+                dashTimer = 0f;
+                canDash = true;
+                audioSource.PlayOneShot(dashRegenSound, 0.5f);
+            }
+
         }
 
 
