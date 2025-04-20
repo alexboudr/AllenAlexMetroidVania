@@ -401,6 +401,17 @@ public class ThirdPersonController : MonoBehaviour
 
 
     }
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Oops I crashed!");
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Oops I crashed into an enemy!");
+        }
+    }
 }
 
 
