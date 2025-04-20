@@ -19,10 +19,12 @@ public class Gun : MonoBehaviour
     private AudioSource audioSource; //audio source...
     public AudioClip shootSound;
 
-
+    public bool isGunActive = true; //need this for stupid pausijng
 
     void Update()
     {
+        if (!isGunActive) return;
+
         //if(Input.GetKeyDown(KeyCode.Q))
         if (Input.GetMouseButtonDown(0))
         {
