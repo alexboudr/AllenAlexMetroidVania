@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|d:\\trent u\\2024\\3_winter 2025\\cust-3133 game design\\allenalexmetroidvania\\finalgame\\assets\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|d:\\trent u\\2024\\3_winter 2025\\cust-3133 game design\\allenalexmetroidvania\\finalgame\\assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\assets\\volumetriclines\\builtinrenderpipeline\\examplescenes\\examplescripts\\shotbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\volumetriclines\\builtinrenderpipeline\\examplescenes\\examplescripts\\shotbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\assets\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|d:\\trent u\\2024\\3_winter 2025\\cust-3133 game design\\allenalexmetroidvania\\finalgame\\assets\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\assets\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,29 +50,77 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Door.cs",
+              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Door.cs",
+              "RelativeDocumentMoniker": "Assets\\Door.cs",
+              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Door.cs",
+              "RelativeToolTip": "Assets\\Door.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T06:22:56.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Bullet.cs",
+              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Bullet.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T00:22:52.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShotBehavior.cs",
+              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
+              "RelativeDocumentMoniker": "Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
+              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
+              "RelativeToolTip": "Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T00:22:04.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EnemyController.cs",
+              "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\EnemyController.cs",
+              "RelativeDocumentMoniker": "Assets\\EnemyController.cs",
+              "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\EnemyController.cs",
+              "RelativeToolTip": "Assets\\EnemyController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T02:02:06.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Path.cs",
               "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Path.cs",
               "RelativeDocumentMoniker": "Assets\\Path.cs",
               "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Path.cs",
               "RelativeToolTip": "Assets\\Path.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwB4AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T01:18:24.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T01:18:24.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Enemy.cs",
               "ToolTip": "D:\\TRENT U\\2024\\3_Winter 2025\\CUST-3133 Game Design\\AllenAlexMetroidVania\\FinalGame\\Assets\\Enemy.cs",
               "RelativeToolTip": "Assets\\Enemy.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwBgAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T18:58:09.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T18:58:09.435Z"
             }
           ]
         }

@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 2356442}
   - component: {fileID: 3370324}
   - component: {fileID: 11489952}
-  - component: {fileID: 11468384}
   - component: {fileID: 10825254}
   - component: {fileID: -4441996020847392695}
   - component: {fileID: 6631590244756270711}
+  - component: {fileID: 7179028714530511605}
   m_Layer: 0
   m_Name: shot_prefab
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,19 +108,6 @@ MonoBehaviour:
   m_lineColor: {r: 0.034482718, g: 1, b: 0, a: 0}
   m_lineWidth: 66
   m_lightSaberFactor: 0.747
---- !u!114 &11468384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb039d3a64491f4ebfc852d25b5ee70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0
@@ -233,6 +220,19 @@ CapsuleCollider:
   m_Height: 54.680153
   m_Direction: 1
   m_Center: {x: 0, y: 0.3400421, z: 2.1924806}
+--- !u!114 &7179028714530511605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6d0ce67e1f4f64db50894f278935af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
 --- !u!1 &2516030942632723692
 GameObject:
   m_ObjectHideFlags: 0
