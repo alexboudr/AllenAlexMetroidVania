@@ -59,10 +59,12 @@ public class Bullet : MonoBehaviour
 
         Debug.Log("hit!");
         //spawn effect
-        Instantiate(collideEffect, transform.position, transform.rotation);
+        GameObject vfx = Instantiate(collideEffect, transform.position, transform.rotation);
         PlayCollisionSound();
 
         // destroy the bullet after collision
+
+        Destroy(vfx, 1.5f);
         Destroy(gameObject);
     }
 }
