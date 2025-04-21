@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float life = 3;
+    public float damageDealt = 3;
+
+    //public GameObject shooter;
+
     private AudioSource audioSource;
     public AudioClip collideSound;
     public GameObject collideEffect;
+
+    //private Collider cd;
 
     //this not only plays the sound, it also plays using spatial audio!! (so the further you are from the bullet, the less noise it'll make)
     void PlayCollisionSound()
@@ -35,11 +40,23 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>(); //initialize the audio source
-        Destroy(gameObject, life);
+        Destroy(gameObject, damageDealt);
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        //IHitable hitable = collision.gameObject.GetComponent<IHitable>();
+
+        //if (hitable != null && collision.gameObject != shooter)
+        //{
+        //    hitable.TakeDamage(damageDealt);
+        //}
+
+        //if(collision.gameObject.CompareTag("Player"))
+        //{
+        //    Physics.IgnoreCollision(collision.collider);
+        //}
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // get the Enemy script component on the collided object

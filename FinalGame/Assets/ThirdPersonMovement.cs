@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class ThirdPersonController : MonoBehaviour
+public class ThirdPersonController : MonoBehaviour //, IHitable
 {
 
     public CharacterController controller;
@@ -400,6 +400,22 @@ public class ThirdPersonController : MonoBehaviour
 
 
 
+    }
+
+
+    //void OnCollisionEnter(Collision other)
+    //{
+    //    //Debug.Log("Oops I crashed!");
+
+    //    if (other.gameObject.CompareTag("Enemy"))
+    //    {
+    //        Debug.Log("Oops I crashed into an enemy!");
+    //    }
+    //}
+
+    public void Knockback()
+    {
+        transform.position -= transform.forward * Time.deltaTime * 100;
     }
 }
 
