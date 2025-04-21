@@ -22,6 +22,18 @@ public class ScanVisor : MonoBehaviour
     private float scanHoldTime = 1.5f; 
     private float scanTimer = 0f;
 
+    //disable gun script when paused
+    public Gun scriptToDisable;
+    public bool poop = false;//set to active when puased
+
+    private void Toggle()
+    {
+        if (scriptToDisable != null)
+        {
+            scriptToDisable.isVisorA = !scriptToDisable.isVisorA;
+        }
+    }
+
     void Start()
     {
         scanableObjects = FindObjectsOfType<ScanLog>(); //finds all objects with the ScanLog script attached to them
@@ -33,8 +45,11 @@ public class ScanVisor : MonoBehaviour
 
     void Update()
     {
+        if (poop) return;
+
         if (Input.GetButtonDown("Scan")) 
         {
+            Toggle();
             isScanning = !isScanning;
             scanUI.SetActive(isScanning); //show/hide UI
             foundScannable.SetActive(false);
@@ -74,16 +89,18 @@ public class ScanVisor : MonoBehaviour
                 {
                     scanProgress.gameObject.SetActive(true);//progress bar activates (lil sauterelle)
 
-                    scanTimer += Time.deltaTime;
-                    scanProgress.value = scanTimer;
-
                     if (scanTimer >= scanHoldTime)
                     {
 
                         Debug.Log("I should be scanning");
                         ScanForObject(hit);
-                        scanTimer = 0f;
+                        //scanTimer = 0f;
                     }
+
+                    scanTimer += Time.deltaTime;
+                    scanProgress.value = scanTimer;
+
+                    
                 }
 
                 if (Input.GetMouseButtonUp(0)) //up -> when left click is released during scan
@@ -147,6 +164,7 @@ public class ScanVisor : MonoBehaviour
 
     public void ScanForObject(RaycastHit hit)
     {
+        Debug.Log("scannignngingingng");
             ScanLog scanLog = hit.collider.GetComponent<ScanLog>();
             if (scanLog != null) //just to make doubly sure we're actually hitting something
             {

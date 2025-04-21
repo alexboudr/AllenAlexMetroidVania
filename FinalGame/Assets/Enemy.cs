@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     float time = 0f;
 
-    float enemyHealth = 3;
+    public float enemyHealth = 3;
 
     public int thisEnemyType;
 

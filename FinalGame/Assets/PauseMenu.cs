@@ -15,12 +15,19 @@ public class PauseMenu : MonoBehaviour
 
     //disable gun script when paused
     public Gun scriptToDisable;
+    public ScanVisor visor;
+
 
     private void Toggle()
     {
         if (scriptToDisable != null)
         {
             scriptToDisable.isGunActive = !scriptToDisable.isGunActive;
+        }
+
+        if (visor != null)
+        {
+            visor.poop = !visor.poop;
         }
     }
 

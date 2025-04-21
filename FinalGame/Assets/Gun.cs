@@ -20,10 +20,12 @@ public class Gun : MonoBehaviour
     public AudioClip shootSound;
 
     public bool isGunActive = true; //need this for stupid pausijng
+    public bool isVisorA = false; //need this fopr stupid visor
 
     void Update()
     {
         if (!isGunActive) return;
+        if (isVisorA) return;
 
         //if(Input.GetKeyDown(KeyCode.Q))
         if (Input.GetMouseButtonDown(0))
