@@ -1,34 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.ProBuilder;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHitable
 {
+    // Enemy AI variables
+
+
+    // Patrolling / Chasing
+
     public Transform player;
     public float playerDistance;
     public float awareAI = 15f;
     public float AIMoveSpeed;
     //bool isChasing = false;
 
-
     [SerializeField] float waitTimeOnWaypoint = 1f;
     [SerializeField] Path path;
 
     NavMeshAgent agent;
     //Animator animator;
-
     float time = 0f;
 
-    float enemyHealth = 3;
-
     public int thisEnemyType;
+
+
+    // Attacking
+
+    public float timeBetweenAttacks;
+    bool alreadyAttacked;
+    public GameObject projectile;
+
+
+    // General Enemy variables
+
+    float enemyHealth = 3;
+    private Rigidbody rb;
+    public Renderer thisEnemyModel;
+    //List<Material> modelMaterials;
 
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         //Animator = GetComponent<Animator>();
+
+        rb = GetComponent<Rigidbody>();
+
+        thisEnemyModel = GetComponent<Renderer>();
+
+        //// NOTE: the way how I'm accessing the enemy model itself is VERY specific to the current testEnemy....
+        //// retrieves the renderer component (aka the model) of THIS enemy (to change the model color for later)
+        //thisEnemyModel = GetComponent<Renderer>().transform.GetChild(0).GetChild(2).GetComponent<Renderer>();
+
+        //// save the original materials to switch back to, after the enemy takes damage
+        //modelMaterials = thisEnemyModel.materials.ToList();
 
         agent.speed = 3.5f;
     }
@@ -46,7 +75,7 @@ public class Enemy : MonoBehaviour
         // if the enemy is either a Chaser or Attacker, calculate their
         // distance from the player and chase accordingly!!
 
-        if (thisEnemyType > 1)
+        if (thisEnemyType == 1)
         {
             playerDistance = Vector3.Distance(player.position, transform.position);
 
@@ -59,7 +88,7 @@ public class Enemy : MonoBehaviour
                 if (playerDistance > 0.1f)
                 {
                     agent.speed = AIMoveSpeed;
-                    Chase();
+                    ChasePlayer();
                 }
                 else
                 {
@@ -67,6 +96,10 @@ public class Enemy : MonoBehaviour
                 }
             }
 
+        }
+        else if (thisEnemyType == 2)
+        {
+            AttackPlayer();
         }
 
         if (agent.remainingDistance < 0.1f)
@@ -89,20 +122,109 @@ public class Enemy : MonoBehaviour
         transform.LookAt(player);
     }
 
-    void Chase()
+    void ChasePlayer()
     {
         transform.Translate(Vector3.forward * AIMoveSpeed * Time.deltaTime);
         agent.SetDestination(player.position);
         //agent.destination = player.position;
     }
 
+    void AttackPlayer()
+    {
+        agent.SetDestination(transform.position);
+
+        transform.LookAt(player);
+
+        if(!alreadyAttacked)
+        {
+            GameObject bul = Instantiate(projectile, transform.position, Quaternion.identity);
+            Rigidbody rb = bul.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+
+            //Bullet projScript = bul.GetComponent<Bullet>();
+            //if (projScript != null)
+            //{
+            //    projScript.shooter = gameObject;
+            //}
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
+    }
+
     public void TakeDamage(float damagePoints)
     {
         enemyHealth -= damagePoints;
+        StartCoroutine(FlashRed());
 
         if (enemyHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
+
+    public IEnumerator FlashRed()
+    {
+        thisEnemyModel.material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        thisEnemyModel.material.color = Color.white;
+
+        //foreach (Material mat in thisEnemyModel.materials)
+        //{
+        //    mat.color = Color.red;
+        //}
+
+        //yield return new WaitForSeconds(0.1f);
+
+        //Debug.Log("modelMaterials: " + modelMaterials.Count);
+        //Debug.Log("thisEnemy.materaisl: " + thisEnemyModel.materials.ToList().Count);
+        //Debug.Log(thisEnemyModel.materials[1].color);
+
+        //for (int i = 0; i < thisEnemyModel.materials.ToList().Count; i++)
+        //{
+
+        //    thisEnemyModel.materials[i] = modelMaterials[i];
+        //}
+
+        //int i = 0;
+        //foreach (Material mat in thisEnemyModel.materials)
+        //{
+        //    mat = modelMaterials[i];
+        //    i++;
+        //}
+    }
+
+    //void OnCollisionEnter(Collision other)
+    //{
+
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("I just hit the player!");
+
+    //        //gameObject.GetComponent<NavMeshAgent>();
+
+    //        ThirdPersonController player = other.gameObject.GetComponent<ThirdPersonController>();
+
+    //        player.Knockback();
+    //    }
+    //}
+
+    public void Execute(Transform executionSource)
+    {
+        KnockbackEntity(executionSource);
+    }
+
+    private void KnockbackEntity(Transform executionSource)
+    {
+        Vector3 dir = (transform.position - executionSource.position).normalized;
+        rb.AddForce(dir, ForceMode.Impulse);
+    }
+
+
 }
