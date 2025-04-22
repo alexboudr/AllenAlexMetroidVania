@@ -6571,8 +6571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logText: Kimaeuxite Shard. Once mined for its conductive properties, the Kimaeuxite
-    Shard has become brittle from years of erosion.<br><br>A strong concussive blast
-    could destroy the rock
+    Shard is <b>fractured</b> from years of erosion.<br><br>A strong concussive blast
+    could destroy the rock...
   unscannedMaterial: {fileID: 2100000, guid: c7a726f7273c0484b91f1ca55af5ff2d, type: 2}
   scannedMaterial: {fileID: 2100000, guid: 5e19743ac87f57a44a328ea5cff32efb, type: 2}
 --- !u!114 &-3657504115253348371
@@ -6590,6 +6590,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 389b910c91e00944487f1968392f317b, type: 3}
   invisibledMaterial: {fileID: 2100000, guid: a242ff88412db66499047b4739e2ccd4, type: 2}
   breakeEffect: {fileID: 4429072122515141959, guid: 83fc56acfbdda4642a5f8eb6adf8aeb8, type: 3}
+  damageTakesToBreak: 3
 --- !u!82 &-4922652922021467059
 AudioSource:
   m_ObjectHideFlags: 0

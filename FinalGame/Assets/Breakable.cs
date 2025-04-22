@@ -16,6 +16,8 @@ public class Breakable : MonoBehaviour
     public GameObject breakeEffect;
 
     private bool hasShot = false;
+    public int damageTakesToBreak = 2;//starting damage is at 1
+
     public void Break()
     {
         if (!hasShot)

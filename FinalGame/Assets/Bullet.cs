@@ -12,7 +12,11 @@ public class Bullet : MonoBehaviour
     public AudioClip collideSound;
     public GameObject collideEffect;
 
+    public int bulletDamage;
+
     //private Collider cd;
+
+    
 
     //this not only plays the sound, it also plays using spatial audio!! (so the further you are from the bullet, the less noise it'll make)
     void PlayCollisionSound()
@@ -63,7 +67,7 @@ public class Bullet : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             // subtract from enemy health
-            enemy.TakeDamage(1);
+            enemy.TakeDamage(bulletDamage);
         }
         else if (collision.gameObject.CompareTag("Target"))
         {
@@ -75,9 +79,18 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Breakable"))
         {
+            //check damage!!!!
+
             Breakable obstacle = collision.gameObject.GetComponent<Breakable>();
 
-            obstacle.Break();
+            Debug.Log(obstacle.damageTakesToBreak + "  +  " + bulletDamage);
+
+            if (obstacle.damageTakesToBreak <= bulletDamage)
+            {
+                
+                obstacle.Break();
+            }
+        
         }
 
         Debug.Log("hit!");

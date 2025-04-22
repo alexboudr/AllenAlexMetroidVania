@@ -196,7 +196,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &6631590244756270711
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -232,9 +232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6d0ce67e1f4f64db50894f278935af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  damageDealt: 3
   collideSound: {fileID: 8300000, guid: e9027e2f9111b4348a945df7ec9aa281, type: 3}
   collideEffect: {fileID: 6473930240934353716, guid: 7f1769c192a88fd45bba41dc0270394d, type: 3}
+  bulletDamage: 1
 --- !u!1 &2516030942632723692
 GameObject:
   m_ObjectHideFlags: 0

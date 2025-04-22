@@ -51,7 +51,7 @@ public class PowerUp : MonoBehaviour
 
     private void ApplySpecificPowerup(string name)
     {
-        // Find the player object and get its script
+        //find the player object and get its script
         ThirdPersonController player = GameObject.FindWithTag("Player").GetComponent<ThirdPersonController>();
 
         if (player == null)
@@ -73,7 +73,9 @@ public class PowerUp : MonoBehaviour
         }
         else if(name == "damage increase")
         {
-
+            Debug.Log("You got a damage increase!");
+            Gun gun = GameObject.FindWithTag("Player").GetComponentInChildren<Gun>();
+            gun.IncreaseDamage();
         }
     }
 }

@@ -31,11 +31,26 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    void LockMouse()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void UnlockMouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         pauseUI.SetActive(isActive);
         areYouSure.SetActive(isActive);
+
+        //mouse stuff
+        LockMouse();
     }
 
     // Update is called once per frame
@@ -43,9 +58,21 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            Toggle();
-            Debug.Log("This is getting activated");
             isActive = !isActive;
+            
+            Debug.Log("This is getting activated");
+
+
+            if (isActive)
+            {
+                UnlockMouse();
+            }
+            else
+            {
+                LockMouse();
+            }
+
+            Toggle();
 
             pauseUI.SetActive(isActive);
             areYouSure.SetActive(false);
@@ -64,10 +91,12 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         //on click, resume game
-        isActive = !isActive;
+        isActive = false;
+        LockMouse();
         pauseUI.SetActive(isActive);
 
         Time.timeScale = 1f;//resume game time
+        
         Toggle();
     }
 

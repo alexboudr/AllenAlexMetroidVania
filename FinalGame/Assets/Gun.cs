@@ -22,6 +22,8 @@ public class Gun : MonoBehaviour
     public bool isGunActive = true; //need this for stupid pausijng
     public bool isVisorA = false; //need this fopr stupid visor
 
+    public int trackedBulletDamage = 1;
+
     void Update()
     {
         if (!isGunActive) return;
@@ -34,9 +36,18 @@ public class Gun : MonoBehaviour
         }
     }
 
+    public void IncreaseDamage()
+    {
+        Bullet bullet = bulletPrefab.GetComponent<Bullet>();
+        bullet.bulletDamage = trackedBulletDamage + 1;
+        trackedBulletDamage = trackedBulletDamage + 1;
+    }
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>(); //initialize the audio source
+        Bullet bullet = bulletPrefab.GetComponent<Bullet>();
+        bullet.bulletDamage = 1;
     }
 
     void Shoot ()
@@ -61,6 +72,9 @@ public class Gun : MonoBehaviour
             Vector3 shotDirection = hit.point - bulletSpawnPoint.position;
 
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.LookRotation(shotDirection));
+
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+
             bullet.GetComponent<Rigidbody>().velocity = shotDirection.normalized * bulletSpeed;
 
             audioSource.PlayOneShot(shootSound, 0.7F); //play that damn sound
