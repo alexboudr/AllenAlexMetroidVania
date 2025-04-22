@@ -25,7 +25,12 @@ public class Enemy : MonoBehaviour, IHitable
     //Animator animator;
     float time = 0f;
 
-    public int thisEnemyType;
+
+    // ENEMY TYPES:
+    // #1: docile, patrols and doesn't attack
+    // #2: medium, patrols and chases when player is near
+    // #3: hostile, patrols, chases AND attacks (fires bullets) when player is near
+    public int thisEnemyType = 1;
 
 
     // Attacking
@@ -78,7 +83,7 @@ public class Enemy : MonoBehaviour, IHitable
         // if the enemy is either a Chaser or Attacker, calculate their
         // distance from the player and chase accordingly!!
 
-        if (thisEnemyType == 1)
+        if (thisEnemyType >= 2)
         {
             playerDistance = Vector3.Distance(player.position, transform.position);
 
@@ -100,9 +105,16 @@ public class Enemy : MonoBehaviour, IHitable
             }
 
         }
-        else if (thisEnemyType == 2)
+        
+        if (thisEnemyType == 3)
         {
-            AttackPlayer();
+            playerDistance = Vector3.Distance(player.position, transform.position);
+
+            if (playerDistance < awareAI)
+            {
+                AttackPlayer();
+            }
+            
         }
 
         if (agent.remainingDistance < 0.1f)
@@ -140,7 +152,7 @@ public class Enemy : MonoBehaviour, IHitable
 
         if(!alreadyAttacked)
         {
-            GameObject bul = Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * 3f), Quaternion.identity);
             Rigidbody rb = bul.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
