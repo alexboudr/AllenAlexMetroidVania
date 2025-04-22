@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7108045733790106098}
   - component: {fileID: 4321699146323070009}
   - component: {fileID: 3225148233399788617}
+  - component: {fileID: -1877849386498166791}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -147,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6d0ce67e1f4f64db50894f278935af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  damageDealt: 3
   collideSound: {fileID: 8300000, guid: e9027e2f9111b4348a945df7ec9aa281, type: 3}
-  collideEffect: {fileID: 0}
+  collideEffect: {fileID: 6473930240934353716, guid: 7f1769c192a88fd45bba41dc0270394d, type: 3}
 --- !u!82 &3225148233399788617
 AudioSource:
   m_ObjectHideFlags: 0
@@ -246,3 +247,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1877849386498166791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606047692755182799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6d0ce67e1f4f64db50894f278935af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 3
+  collideSound: {fileID: 8300000, guid: e9027e2f9111b4348a945df7ec9aa281, type: 3}
+  collideEffect: {fileID: 0}

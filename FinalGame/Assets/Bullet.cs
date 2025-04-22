@@ -73,6 +73,12 @@ public class Bullet : MonoBehaviour
             //do da thang
             target.hit();
         }
+        else if (collision.gameObject.CompareTag("Breakable"))
+        {
+            Breakable obstacle = collision.gameObject.GetComponent<Breakable>();
+
+            obstacle.Break();
+        }
 
         Debug.Log("hit!");
         //spawn effect

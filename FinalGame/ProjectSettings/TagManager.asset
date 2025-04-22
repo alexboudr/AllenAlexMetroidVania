@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Bullet
   - Target
+  - Breakable
   layers:
   - Default
   - TransparentFX

@@ -71,5 +71,9 @@ public class PowerUp : MonoBehaviour
             Debug.Log("you collected the dash");
             player.PickedupDash();
         }
+        else if(name == "damage increase")
+        {
+
+        }
     }
 }

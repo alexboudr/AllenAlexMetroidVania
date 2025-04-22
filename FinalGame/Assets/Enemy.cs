@@ -37,9 +37,10 @@ public class Enemy : MonoBehaviour, IHitable
 
     // General Enemy variables
 
-    float enemyHealth = 3;
+    public float enemyHealth = 3;
     private Rigidbody rb;
     public Renderer thisEnemyModel;
+    private Material thisEnemyMaterial;
     //List<Material> modelMaterials;
 
 
@@ -51,6 +52,8 @@ public class Enemy : MonoBehaviour, IHitable
         rb = GetComponent<Rigidbody>();
 
         thisEnemyModel = GetComponent<Renderer>();
+
+        thisEnemyMaterial = thisEnemyModel.material; //this is needed to store the current material WIHTOUT the scan visor
 
         //// NOTE: the way how I'm accessing the enemy model itself is VERY specific to the current testEnemy....
         //// retrieves the renderer component (aka the model) of THIS enemy (to change the model color for later)
