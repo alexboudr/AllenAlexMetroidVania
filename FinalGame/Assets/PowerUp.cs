@@ -11,12 +11,19 @@ public class PowerUp : MonoBehaviour
     public float floatHeight = 0.5f;
     private Vector3 startPosition;
     public string powerupName;
+    public GameObject popUpManager;
+    public string textToShow;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Pickup();
+
+            if (popUpManager != null)
+            {
+                popUpManager.GetComponent<PopPup>().StartTimeAndText(textToShow);
+            }
         }
     }
 
