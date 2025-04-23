@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float damageDealt = 3;
 
-    //public GameObject shooter;
+    //private GameObject shooter;
 
     private AudioSource audioSource;
     public AudioClip collideSound;
@@ -43,6 +43,7 @@ public class Bullet : MonoBehaviour
 
     void Awake()
     {
+        //shooter = GetComponent<GameObject>();
         audioSource = GetComponent<AudioSource>(); //initialize the audio source
         Destroy(gameObject, damageDealt);
     }
@@ -68,6 +69,7 @@ public class Bullet : MonoBehaviour
 
             // subtract from enemy health
             enemy.TakeDamage(bulletDamage);
+            //enemy.Execute(transform);
         }
         else if (collision.gameObject.CompareTag("Target"))
         {

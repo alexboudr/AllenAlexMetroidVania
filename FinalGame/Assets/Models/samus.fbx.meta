@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 5ce374a3e42cea74ca624e2ded6e5d81
+guid: 3cfc9cccea03feb4aaf59d293b4d180b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: samus_body
+    second: {fileID: 2100000, guid: c110b0ed2c060d745a3c86d4cecf6da1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: samus_gun
+    second: {fileID: 2100000, guid: 2765b6ed6e347d442819d20ea49b3a77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: samus_guntip
+    second: {fileID: 2100000, guid: 93a491b06e55a674ca10c6879f642b5c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -78,7 +93,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
