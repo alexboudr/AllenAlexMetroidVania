@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IHitable
     public float awareAI = 15f;
     public float AIMoveSpeed;
     //bool isChasing = false;
+    public float enemyBulletSpawnPoint = 3f;
 
     [SerializeField] float waitTimeOnWaypoint = 1f;
     [SerializeField] Path path;
@@ -152,7 +153,7 @@ public class Enemy : MonoBehaviour, IHitable
 
         if(!alreadyAttacked)
         {
-            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * 3f), Quaternion.identity);
+            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * enemyBulletSpawnPoint), Quaternion.identity);
             Rigidbody rb = bul.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
