@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\ihitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\ihitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\breakable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\breakable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\thirdpersonmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\thirdpersonmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|c:\\users\\phvbe\\finalgame\\allenalexmetroidvania\\finalgame\\assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\assets\\ihitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16DD1D4B-0017-C897-AC70-0D4740C4ACC9}|Assembly-CSharp.csproj|solutionrelative:assets\\ihitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,23 +42,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Breakable.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Breakable.cs",
+              "RelativeDocumentMoniker": "Assets\\Breakable.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Breakable.cs",
+              "RelativeToolTip": "Assets\\Breakable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T16:27:00.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\PauseMenu.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\PauseMenu.cs",
+              "RelativeToolTip": "Assets\\PauseMenu.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwF4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T15:02:42.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PowerUp.cs",
+              "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\PowerUp.cs",
+              "RelativeDocumentMoniker": "Assets\\PowerUp.cs",
+              "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\PowerUp.cs",
+              "RelativeToolTip": "Assets\\PowerUp.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwEoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T14:31:21.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Gun.cs",
               "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs",
               "RelativeDocumentMoniker": "Assets\\Gun.cs",
               "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Gun.cs",
               "RelativeToolTip": "Assets\\Gun.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBEAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T22:18:50.149Z"
+              "WhenOpened": "2025-04-20T22:18:50.149Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "IHitable.cs",
               "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\IHitable.cs",
               "RelativeDocumentMoniker": "Assets\\IHitable.cs",
@@ -64,26 +116,27 @@
               "RelativeDocumentMoniker": "Assets\\ThirdPersonMovement.cs",
               "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\ThirdPersonMovement.cs",
               "RelativeToolTip": "Assets\\ThirdPersonMovement.cs",
-              "ViewState": "AgIAAHkBAAAAAAAAAAAswJsBAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAswJsBAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T17:28:07.255Z"
+              "WhenOpened": "2025-04-20T17:28:07.255Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Bullet.cs",
               "ToolTip": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Bullet.cs",
               "RelativeToolTip": "Assets\\Bullet.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T00:22:52.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\phvbe\\FinalGame\\AllenAlexMetroidVania\\FinalGame\\Assets\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Enemy.cs",

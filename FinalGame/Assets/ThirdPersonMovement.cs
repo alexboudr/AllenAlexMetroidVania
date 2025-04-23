@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class ThirdPersonController : MonoBehaviour //, IHitable
+public class ThirdPersonController : MonoBehaviour//, IHitable
 {
 
     public CharacterController controller;
     public Transform cam;
+    //public GameObject thisPlayer;
+    //private Rigidbody rb;
+
+    private float playerHealth = 10;
+    public float invincibilityLength;
+    private float invincibilityCounter;
+
+    public Renderer playerRenderer;
+    private float flashCounter;
+    public float flashLength = 0.1f;
 
     public float speed = 6f;
 
@@ -222,6 +232,7 @@ public class ThirdPersonController : MonoBehaviour //, IHitable
         float height = GetComponent<CharacterController>().height;
         Debug.Log("Character height: " + height);
 
+        //rb = thisPlayer.GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
@@ -398,25 +409,74 @@ public class ThirdPersonController : MonoBehaviour //, IHitable
         }
 
 
+        // PLAYER HEALTH / TAKING DAMAGE
+        if(invincibilityCounter > 0)
+        {
+            invincibilityCounter -= Time.deltaTime;
+            flashCounter -= Time.deltaTime;
 
+            if(flashCounter <= 0)
+            {
+                playerRenderer.enabled = !playerRenderer.enabled;
+                flashCounter = flashLength;
+            }
+
+            if(invincibilityCounter <= 0)
+            {
+                playerRenderer.enabled = true;
+            }
+        }
 
     }
 
 
-    //void OnCollisionEnter(Collision other)
-    //{
-    //    //Debug.Log("Oops I crashed!");
+    void OnCollisionEnter(Collision other)
+    {
+        //Debug.Log("Oops I crashed!");
 
-    //    if (other.gameObject.CompareTag("Enemy"))
-    //    {
-    //        Debug.Log("Oops I crashed into an enemy!");
-    //    }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            //Debug.Log("Oops I crashed into an enemy!");
+
+            TakeDamage(1);  // tbh should be called upon on the enemy's side since each enemy might deal diff damage
+            //Execute(other.transform);
+
+            Debug.Log(playerHealth);
+        }
+    }
+
+    public void TakeDamage(float damagePoints)
+    {
+        if(invincibilityCounter <= 0)
+        {
+            playerHealth -= damagePoints;
+
+            invincibilityCounter = invincibilityLength;
+
+            playerRenderer.enabled = false;
+
+            flashCounter = flashLength;
+        }
+
+
+        //StartCoroutine(FlashRed());
+
+        //if (enemyHealth <= 0)
+        //{
+        //    Destroy(gameObject);
+        //}
+    }
+
+    //public void Execute(Transform executionSource)
+    //{
+    //    KnockbackEntity(executionSource);
     //}
 
-    public void Knockback()
-    {
-        transform.position -= transform.forward * Time.deltaTime * 100;
-    }
+    //private void KnockbackEntity(Transform executionSource)
+    //{
+    //    Vector3 dir = (transform.position - executionSource.position).normalized;
+    //    rb.AddForce(dir, ForceMode.Impulse);
+    //}
 }
 
 

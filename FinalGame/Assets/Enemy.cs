@@ -215,6 +215,20 @@ public class Enemy : MonoBehaviour, IHitable
         //}
     }
 
+
+
+    public void Execute(Transform executionSource)
+    {
+        KnockbackEntity(executionSource);
+    }
+
+    private void KnockbackEntity(Transform executionSource)
+    {
+        Vector3 dir = (transform.position - executionSource.position).normalized;
+        rb.AddForce(dir, ForceMode.Impulse);
+    }
+
+
     //void OnCollisionEnter(Collision other)
     //{
 
@@ -229,17 +243,5 @@ public class Enemy : MonoBehaviour, IHitable
     //        player.Knockback();
     //    }
     //}
-
-    public void Execute(Transform executionSource)
-    {
-        KnockbackEntity(executionSource);
-    }
-
-    private void KnockbackEntity(Transform executionSource)
-    {
-        Vector3 dir = (transform.position - executionSource.position).normalized;
-        rb.AddForce(dir, ForceMode.Impulse);
-    }
-
 
 }
