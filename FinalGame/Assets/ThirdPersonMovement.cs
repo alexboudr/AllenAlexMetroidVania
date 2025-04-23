@@ -57,7 +57,7 @@ public class ThirdPersonController : MonoBehaviour //, IHitable
         {
             Debug.Log("Jump!");
 
-            audioSource.PlayOneShot(jumpSound, 0.7F);
+            audioSource.PlayOneShot(jumpSound, 1F);
 
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             canDash = true;
@@ -118,7 +118,7 @@ public class ThirdPersonController : MonoBehaviour //, IHitable
         bool jumpedDuringDash = false; // Track if we jumped mid-dash
 
         //play sound!
-        audioSource.PlayOneShot(dashSound, 0.7F);
+        audioSource.PlayOneShot(dashSound, 1F);
 
         while (Time.time < startTime + dashTime)
         {
@@ -238,9 +238,19 @@ public class ThirdPersonController : MonoBehaviour //, IHitable
 
         if (Physics.SphereCast(sphereOrigin, sphereRadius, Vector3.down, out hit, sphereCastLength))
         {
-            canJump = true;
+            //we need this so that you can't jump on slops
+            //if it detects it's on ground, then check if it's a slope
+            float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+            if (slopeAngle < 50)
+            {
+                canJump = true;
+                groundedPlayer = true;
+            }
+
+
+            
             Debug.Log("so this should reset canJump");
-            groundedPlayer = true;
+            //groundedPlayer = true;
             //hasDashedOnce = false;
 
             // Only reset canDoubleJump if we actually have the power-up
@@ -248,9 +258,7 @@ public class ThirdPersonController : MonoBehaviour //, IHitable
             {
                 canDoubleJump = true;
             }
-            //if it detects it's on ground, then check if it's a slope
-            //float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
-            //slopeAngleToTransfer = slopeAngle;
+            
 
             
 

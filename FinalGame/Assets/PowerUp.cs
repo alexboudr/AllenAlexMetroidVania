@@ -13,6 +13,8 @@ public class PowerUp : MonoBehaviour
     public string powerupName;
     public GameObject popUpManager;
     public string textToShow;
+   // private AudioSource audioSource;
+    public AudioClip pickupSound;
 
     void OnTriggerEnter(Collider other)
     {
@@ -30,6 +32,7 @@ public class PowerUp : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
+        //audioSource = GetComponent<AudioSource>(); //initialize the audio source
     }
 
     void Update()
@@ -47,6 +50,7 @@ public class PowerUp : MonoBehaviour
         //spawn effect
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
+        AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position);
         //apply to player
         //ok this is gonna be convulted and weird, but stick with me here
         ApplySpecificPowerup(powerupName);
@@ -80,7 +84,10 @@ public class PowerUp : MonoBehaviour
         }
         else if(name == "damage increase")
         {
+
             Debug.Log("You got a damage increase!");
+            Music music = GameObject.FindWithTag("Player").GetComponentInChildren<Music>();
+            music.PlaySong();
             Gun gun = GameObject.FindWithTag("Player").GetComponentInChildren<Gun>();
             gun.IncreaseDamage();
         }

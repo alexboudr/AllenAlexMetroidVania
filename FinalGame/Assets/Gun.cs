@@ -77,7 +77,7 @@ public class Gun : MonoBehaviour
 
             bullet.GetComponent<Rigidbody>().velocity = shotDirection.normalized * bulletSpeed;
 
-            audioSource.PlayOneShot(shootSound, 0.7F); //play that damn sound
+            audioSource.PlayOneShot(shootSound, 1F); //play that damn sound
 
             //if ( hit.transform.CompareTag("Enemy") )
             //{

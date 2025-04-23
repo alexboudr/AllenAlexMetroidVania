@@ -1409,13 +1409,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Patient status - stable:\nLogs in my database indicate that your left
-    arm was caught in an explosion caused by an enemy combatant and was transported
-    to the nearest medical facilities.\n\nYour tissue has healed, however, immediate
-    amputation was needed to prevent the <i>rot</i> from spreading through your body.\n\n\nRegeneration
-    pod status - malfunction:\nTemperature controller seems to have been outputting
-    at an astoundingly high level for a very long time. \n\n\nNow scanning for any
-    messages..."
+  m_text: "Patient status - stable:\nMedical logs confirm your left arm was severely
+    damaged in an explosion caused by hostile forces. \n\n\nEmergency extraction
+    and treatment were successful, though full limb preservation was not possible.
+    Surgical removal was performed to prevent systemic complications.\n\n\nRegeneration
+    pod status - malfunction:\nTemperature controller appears to have been operating
+    at dangerously high levels for an extended period. Diagnostic protocols are currently
+    underway.\n\n\nNow scanning for any messages..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a9c6eb6ffd720040a88c8107c21030b, type: 2}
   m_sharedMaterial: {fileID: 1381647262627705402, guid: 0a9c6eb6ffd720040a88c8107c21030b, type: 2}
@@ -4394,13 +4394,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "We are now being judged as we have judged others. Our repeated sins in
-    this homeworld has led to greater devastation and societal regression for everyone.
-    It is only now, after decades of aggression do I realize our failure. It is only
-    now, so late in my lifetime, do I realize what my role meant and <i>did</i> to
-    so many others. \n\nThe <i>Rot</i> continues to spread like madness throughout
-    these lands. In my last act, I am sealing the planet, and sending this message
-    as a <b>warning</b>. Fate merely delivered the judgement we refused to see."
+  m_text: "To anyone... I am sorry.\nThis operation began under my directive, and
+    I must be the one to finish it. \nI believed escalation would force submission.
+    Instead, we burned everything.\nOur enemies. Our own. The world itself.\nThere
+    is no one left to apologize to. No future to redeem.\nIn the absence of life,
+    I\u2019ve sealed the planet. This message is all that remains...\nWe were not
+    overrun.\nWe were not outnumbered.\nWe were not betrayed.\nThis, is by <i>our</i>
+    hand."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a9c6eb6ffd720040a88c8107c21030b, type: 2}
   m_sharedMaterial: {fileID: 1381647262627705402, guid: 0a9c6eb6ffd720040a88c8107c21030b, type: 2}

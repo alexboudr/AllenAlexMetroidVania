@@ -26,7 +26,7 @@ public class Breakable : MonoBehaviour
             objectRenderer.material = invisibledMaterial;
             //spawn effect
             Instantiate(breakeEffect, transform.position + Vector3.up * 2.5f, transform.rotation);
-            audioSource.PlayOneShot(breakSound, 0.7F); //play that damn sound
+            audioSource.PlayOneShot(breakSound, 1F); //play that damn sound
 
             Destroy(gameObject, breakSound.length);
         }
@@ -38,9 +38,5 @@ public class Breakable : MonoBehaviour
         objectRenderer = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

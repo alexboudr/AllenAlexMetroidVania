@@ -6570,9 +6570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6437a273392cc347b8e349f3334a734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logText: Kimaeuxite Shard. Once mined for its conductive properties, the Kimaeuxite
-    Shard is <b>fractured</b> from years of erosion.<br><br>A strong concussive blast
-    could destroy the rock...
+  logText: Kimaeuxite Shard.<br><br>Once mined for its conductive properties, the
+    Kimaeuxite Shard is <i>cracked</i> from years of erosion.<br><br>A strong concussive
+    blast could destroy the rock...
   unscannedMaterial: {fileID: 2100000, guid: c7a726f7273c0484b91f1ca55af5ff2d, type: 2}
   scannedMaterial: {fileID: 2100000, guid: 5e19743ac87f57a44a328ea5cff32efb, type: 2}
 --- !u!114 &-3657504115253348371

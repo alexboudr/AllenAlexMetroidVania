@@ -22,7 +22,7 @@ public class PopPup : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "FirstArea")
         {
             popUpCooldown = 7f;
-            StartTimeAndText("To activate your AVI unit, press <b>Tab</b>. Hold <b>Left Mouse</b> to scan objects.");
+            StartTimeAndText("To activate your AVI unit, press <i>Tab</i>. Hold down <i>Left Mouse</i> over objects to scan them.");
             popUpCooldown = 5f;
         }
     }

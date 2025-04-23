@@ -83,8 +83,6 @@ public class Bullet : MonoBehaviour
 
             Breakable obstacle = collision.gameObject.GetComponent<Breakable>();
 
-            Debug.Log(obstacle.damageTakesToBreak + "  +  " + bulletDamage);
-
             if (obstacle.damageTakesToBreak <= bulletDamage)
             {
                 
