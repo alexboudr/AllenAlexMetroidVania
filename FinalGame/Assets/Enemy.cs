@@ -5,10 +5,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.ProBuilder;
 
+[RequireComponent(typeof(NavMeshAgent), typeof(Rigidbody))]
 public class Enemy : MonoBehaviour, IHitable
 {
     // Enemy AI variables
-
+    private NavMeshAgent agent;
+    private Rigidbody rb;
 
     // Patrolling / Chasing
 
@@ -22,7 +24,7 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] float waitTimeOnWaypoint = 1f;
     [SerializeField] Path path;
 
-    NavMeshAgent agent;
+    
     //Animator animator;
     float time = 0f;
 
@@ -44,7 +46,6 @@ public class Enemy : MonoBehaviour, IHitable
     // General Enemy variables
 
     public float enemyHealth = 3;
-    private Rigidbody rb;
     public Renderer thisEnemyModel;
     private Material thisEnemyMaterial;
     //List<Material> modelMaterials;
@@ -153,7 +154,8 @@ public class Enemy : MonoBehaviour, IHitable
 
         if(!alreadyAttacked)
         {
-            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * enemyBulletSpawnPoint), Quaternion.identity);
+            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * 3f), Quaternion.identity);
+            bul.tag = "EnemyBullet";
             Rigidbody rb = bul.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
@@ -218,15 +220,30 @@ public class Enemy : MonoBehaviour, IHitable
 
 
 
-    public void Execute(Transform executionSource)
-    {
-        KnockbackEntity(executionSource);
-    }
-
-    private void KnockbackEntity(Transform executionSource)
+    public void KnockbackEntity(Transform executionSource)
     {
         Vector3 dir = (transform.position - executionSource.position).normalized;
         rb.AddForce(dir, ForceMode.Impulse);
+    }
+
+    public IEnumerator getKnockedBack(Vector3 force)
+    {
+        yield return null;
+        agent.enabled = false;
+        rb.useGravity = true;
+        rb.isKinematic = false;
+        rb.AddForce(force);
+
+        yield return new WaitForFixedUpdate();
+        yield return new WaitUntil(() => rb.velocity.magnitude < 0.05f);
+        
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.useGravity = false;
+        rb.isKinematic = true;
+        agent.Warp(transform.position);
+        agent.enabled = true;
+        yield return null;
     }
 
 

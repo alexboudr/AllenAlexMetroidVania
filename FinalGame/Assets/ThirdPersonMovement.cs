@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ThirdPersonController : MonoBehaviour//, IHitable
@@ -13,8 +14,10 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
 
     public GameObject[] hearts;
     private bool isPlayerDead;
-
+    private int healthPickups = 0;
     private int playerHealth;
+    private int initialHealth = 4;
+    
     public float invincibilityLength;
     private float invincibilityCounter;
 
@@ -229,10 +232,22 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
         pickedupDash = true;
     }
 
+    public void PickedUpHealth()
+    {
+        healthPickups++;
+        ReplenishHealth();
+    }
+
 
     void Start()
     {
-        playerHealth = hearts.Length;
+        //playerHealth = hearts.Length;
+        playerHealth = initialHealth;
+
+        for(int i = playerHealth; i < hearts.Length; i ++)
+        {
+            hearts[i].gameObject.SetActive(false);
+        }
 
         float height = GetComponent<CharacterController>().height;
         Debug.Log("Character height: " + height);
@@ -444,62 +459,60 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
 
         }
 
-
-
-
     }
 
 
     void OnCollisionEnter(Collision other)
     {
-        //Debug.Log("Oops I crashed!");
-
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
         {
-            //Debug.Log("Oops I crashed into an enemy!");
-
             TakeDamage(1);  // tbh should be called upon on the enemy's side since each enemy might deal diff damage
             //Execute(other.transform);
 
-            Debug.Log(playerHealth);
+            //Debug.Log(playerHealth);
         }
     }
 
     public void TakeDamage(float damagePoints)
     {
-        if(playerHealth >= 1)
+        if (invincibilityCounter <= 0) // Only process damage if invincibility is over
         {
-            playerHealth -= (int)damagePoints;
-            Destroy(hearts[(int)playerHealth].gameObject);
-
-            if(playerHealth < 1)
+            if (playerHealth > 0)
             {
-                isPlayerDead = true;
-                return;
-            }
+                playerHealth -= (int)damagePoints;
+                //Destroy(hearts[(int)playerHealth].gameObject);
+                hearts[(int)playerHealth].gameObject.SetActive(false);
 
-            if (invincibilityCounter <= 0)
-            {
-                //playerHealth -= (int)damagePoints;
-
-                invincibilityCounter = invincibilityLength;
-
-                playerRenderer.enabled = false;
-
-                flashCounter = flashLength;
+                if (playerHealth < 1)
+                {
+                    isPlayerDead = true;
+                    // Optionally, add some death logic like stopping the game or displaying a death screen
+                }
+                else
+                {
+                    // Start invincibility after taking damage
+                    invincibilityCounter = invincibilityLength;
+                    playerRenderer.enabled = false;
+                    flashCounter = flashLength;
+                }
             }
         }
-
-
-
-
-        //StartCoroutine(FlashRed());
-
-        //if (enemyHealth <= 0)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
+
+    private void ReplenishHealth()
+    {
+        int h = 0;
+
+        for(int i = 0; i < initialHealth + healthPickups; i++)
+        {
+            //hearts[i].gameObject.SetActive(false);
+            hearts[i].gameObject.SetActive(true);
+            h++;
+        }
+
+        playerHealth = h;
+    }
+
 
     //public void Execute(Transform executionSource)
     //{
