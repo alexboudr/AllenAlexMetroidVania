@@ -11,7 +11,10 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
     //public GameObject thisPlayer;
     //private Rigidbody rb;
 
-    private float playerHealth = 10;
+    public GameObject[] hearts;
+    private bool isPlayerDead;
+
+    private int playerHealth;
     public float invincibilityLength;
     private float invincibilityCounter;
 
@@ -229,6 +232,8 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
 
     void Start()
     {
+        playerHealth = hearts.Length;
+
         float height = GetComponent<CharacterController>().height;
         Debug.Log("Character height: " + height);
 
@@ -238,6 +243,29 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
     // Update is called once per frame
     void Update()
     {
+        if(isPlayerDead)
+        {
+            Debug.Log("ded as frick");
+        }
+
+        // PLAYER HEALTH / TAKING DAMAGE
+        if (invincibilityCounter > 0)
+        {
+            invincibilityCounter -= Time.deltaTime;
+            flashCounter -= Time.deltaTime;
+
+            if (flashCounter <= 0)
+            {
+                playerRenderer.enabled = !playerRenderer.enabled;
+                flashCounter = flashLength;
+            }
+
+            if (invincibilityCounter <= 0)
+            {
+                playerRenderer.enabled = true;
+            }
+        }
+
         //determines if I'm hitting the floor
         Debug.Log(groundedPlayer);
         RaycastHit hit;
@@ -417,23 +445,7 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
         }
 
 
-        // PLAYER HEALTH / TAKING DAMAGE
-        if(invincibilityCounter > 0)
-        {
-            invincibilityCounter -= Time.deltaTime;
-            flashCounter -= Time.deltaTime;
 
-            if(flashCounter <= 0)
-            {
-                playerRenderer.enabled = !playerRenderer.enabled;
-                flashCounter = flashLength;
-            }
-
-            if(invincibilityCounter <= 0)
-            {
-                playerRenderer.enabled = true;
-            }
-        }
 
     }
 
@@ -455,16 +467,30 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
 
     public void TakeDamage(float damagePoints)
     {
-        if(invincibilityCounter <= 0)
+        if(playerHealth >= 1)
         {
-            playerHealth -= damagePoints;
+            playerHealth -= (int)damagePoints;
+            Destroy(hearts[(int)playerHealth].gameObject);
 
-            invincibilityCounter = invincibilityLength;
+            if(playerHealth < 1)
+            {
+                isPlayerDead = true;
+                return;
+            }
 
-            playerRenderer.enabled = false;
+            if (invincibilityCounter <= 0)
+            {
+                //playerHealth -= (int)damagePoints;
 
-            flashCounter = flashLength;
+                invincibilityCounter = invincibilityLength;
+
+                playerRenderer.enabled = false;
+
+                flashCounter = flashLength;
+            }
         }
+
+
 
 
         //StartCoroutine(FlashRed());
