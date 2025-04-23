@@ -1973,8 +1973,8 @@ MonoBehaviour:
     Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
-    m_AccelTime: 0.2
-    m_DecelTime: 0.1
+    m_AccelTime: 0.05
+    m_DecelTime: 0.05
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
@@ -1997,8 +1997,8 @@ MonoBehaviour:
     Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
-    m_AccelTime: 0.1
-    m_DecelTime: 0.1
+    m_AccelTime: 0.05
+    m_DecelTime: 0.05
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
@@ -14565,7 +14565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Alex: 00:45:53
+  m_text: 'Alex: 00:45:31
 
     Allen: 02:00:60'
   m_isRightToLeft: 0
