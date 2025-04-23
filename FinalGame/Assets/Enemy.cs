@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour, IHitable
     public float awareAI = 15f;
     public float AIMoveSpeed;
     //bool isChasing = false;
+    public float enemyBulletSpawnPoint = 3f;
 
     [SerializeField] float waitTimeOnWaypoint = 1f;
     [SerializeField] Path path;
