@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Target
   - Breakable
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

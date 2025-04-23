@@ -48,42 +48,38 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, damageDealt);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision other)
     {
         //IHitable hitable = collision.gameObject.GetComponent<IHitable>();
 
-        //if (hitable != null && collision.gameObject != shooter)
-        //{
-        //    hitable.TakeDamage(damageDealt);
-        //}
 
-        //if(collision.gameObject.CompareTag("Player"))
-        //{
-        //    Physics.IgnoreCollision(collision.collider);
-        //}
+        if (gameObject.CompareTag("Bullet") && other.gameObject.CompareTag("Player"))
+        {
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), other.gameObject.GetComponent<Collider>());
+        }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             // get the Enemy script component on the collided object
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
             // subtract from enemy health
             enemy.TakeDamage(bulletDamage);
             //enemy.Execute(transform);
         }
-        else if (collision.gameObject.CompareTag("Target"))
+        else if (other.gameObject.CompareTag("Target"))
         {
             //get target script
-            Target target = collision.gameObject.GetComponent<Target>();
+            Target target = other.gameObject.GetComponent<Target>();
 
             //do da thang
             target.hit();
         }
-        else if (collision.gameObject.CompareTag("Breakable"))
+        else if (other.gameObject.CompareTag("Breakable"))
         {
             //check damage!!!!
 
-            Breakable obstacle = collision.gameObject.GetComponent<Breakable>();
+            Breakable obstacle = other.gameObject.GetComponent<Breakable>();
 
             if (obstacle.damageTakesToBreak <= bulletDamage)
             {

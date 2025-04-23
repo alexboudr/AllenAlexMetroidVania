@@ -5,5 +5,7 @@ using UnityEngine;
 public interface IHitable
 {
     public void TakeDamage(float damagePoints);
-    public void Execute(Transform executionSource);
+    public void KnockbackEntity(Transform executionSource);
+
+    public IEnumerator getKnockedBack(Vector3 force);
 }
