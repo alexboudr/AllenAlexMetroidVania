@@ -14,7 +14,7 @@ public class PowerUp : MonoBehaviour
     public GameObject popUpManager;
     public string textToShow;
    // private AudioSource audioSource;
-    //public AudioClip pickupSound;
+    public AudioClip pickupSound;
 
     void OnTriggerEnter(Collider other)
     {
@@ -50,7 +50,7 @@ public class PowerUp : MonoBehaviour
         //spawn effect
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        //AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position);
         //apply to player
         //ok this is gonna be convulted and weird, but stick with me here
         ApplySpecificPowerup(powerupName);
@@ -90,6 +90,8 @@ public class PowerUp : MonoBehaviour
             music.PlaySong();
             Gun gun = GameObject.FindWithTag("Player").GetComponentInChildren<Gun>();
             gun.IncreaseDamage();
+            popUpManager.GetComponent<Respawn>().RespawnEnemies();
+
         } 
         else if (name == "health") {
             Debug.Log("health increase!");

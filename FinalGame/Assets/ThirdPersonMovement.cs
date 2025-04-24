@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonController : MonoBehaviour//, IHitable
 {
@@ -59,6 +60,7 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
     public AudioClip jumpSound;
     public AudioClip dashSound;
     public AudioClip dashRegenSound;
+    public AudioClip tookHitSound;
 
 
 
@@ -261,6 +263,7 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
         if(isPlayerDead)
         {
             Debug.Log("ded as frick");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         // PLAYER HEALTH / TAKING DAMAGE
@@ -482,7 +485,7 @@ public class ThirdPersonController : MonoBehaviour//, IHitable
                 playerHealth -= (int)damagePoints;
                 //Destroy(hearts[(int)playerHealth].gameObject);
                 hearts[(int)playerHealth].gameObject.SetActive(false);
-
+                audioSource.PlayOneShot(tookHitSound, 1f);
                 if (playerHealth < 1)
                 {
                     isPlayerDead = true;

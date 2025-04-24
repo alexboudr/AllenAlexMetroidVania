@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour, IHitable
     public Renderer thisEnemyModel;
     private Material thisEnemyMaterial;
     //List<Material> modelMaterials;
-
+    private float healthReset = 0; //for respawn
 
     private void Awake()
     {
@@ -77,6 +77,7 @@ public class Enemy : MonoBehaviour, IHitable
     {
         agent.destination = path.GetCurrentWaypoint();
         agent.autoBraking = false;
+        healthReset = enemyHealth;
     }
 
     // Update is called once per frame
@@ -134,6 +135,13 @@ public class Enemy : MonoBehaviour, IHitable
         //float normalizedSpeed = Mathf.InverseLerp(0f, agent.speed, agent.velocity.magnitude);
     }
 
+    //since we;re not actually "destroying:" the objects, when we reactivate them we need to reset their health
+    public void ResetHealth()
+    {
+        enemyHealth = healthReset;
+        thisEnemyModel.material.color = Color.white;
+    }
+
     void LookAtPlayer()
     {
         transform.LookAt(player);
@@ -154,10 +162,10 @@ public class Enemy : MonoBehaviour, IHitable
 
         if(!alreadyAttacked)
         {
-            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * 3f), Quaternion.identity);
+            GameObject bul = Instantiate(projectile, (transform.position + transform.forward * enemyBulletSpawnPoint), Quaternion.identity);
             bul.tag = "EnemyBullet";
             Rigidbody rb = bul.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
 
             //Bullet projScript = bul.GetComponent<Bullet>();
@@ -183,7 +191,8 @@ public class Enemy : MonoBehaviour, IHitable
 
         if (enemyHealth <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
